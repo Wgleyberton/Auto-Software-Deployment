@@ -1,0 +1,35 @@
+installers_dir: "installers"
+logs_dir: "logs"
+reports_dir: "reports"
+
+# sequential or parallel
+execution_mode: "sequential"
+max_workers: 4
+
+# Enable SHA-256 integrity check before installing
+validate_hash: false
+
+# Whitelist: only filenames listed here will be processed.
+# Remove this block to allow all detected installers.
+whitelist:
+  - "npp.8.9.3.Installer.x64.exe"
+
+# SHA256 hashes for integrity validation (used when validate_hash: true)
+# hashes:
+#   "winrar-x64-720br.exe": "<sha256-here>"
+
+# ─── VirusTotal ───────────────────────────────────────────────────────────────
+# api_key: set the key here OR export the env var VT_API_KEY (recommended).
+# The env var takes precedence over the value written here.
+virustotal:
+  enabled: true
+  api_key: "VT_API_KEY"                   # leave blank and use VT_API_KEY env var instead
+  upload_unknown: false         # upload files not yet in the VT database (uses quota)
+  malicious_threshold: 1        # block if >= N engines flag as malicious
+  suspicious_threshold: 3       # block if >= N engines flag as suspicious
+  block_unknown: false          # block files not found in VT when upload_unknown is false
+
+# ─── Logging ──────────────────────────────────────────────────────────────────
+logging:
+  level: "INFO"
+  format: "json"                # json (structured, SIEM-ready) or text

@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Project runtime output
+logs/execution.log
+reports/report.json
+
+# Never commit real installers or secrets
+installers/*.exe
+installers/*.msi
+installers/*.sh
+installers/*.deb
+installers/*.rpm
+installers/*.pkg
+
+# Local config overrides (put your api_key here, not in config.yaml)
+config/config.local.yaml
+.env
